@@ -1,3 +1,23 @@
 <resources>
     <string name="app_name">Corona</string>
+    <string name="q1">What is the emerging disease Corona Covid-19?</string>
+    <string name="ans1">It is a disease caused by a new respiratory virus that was first identified in late December 2019</string>
+    <string name="q2">What is the case that is suspected of having Corona?</string>
+    <string name="ans2">A suspected case is someone who has symptoms of coronavirus (COVID-19), who has been tested or is about to be tested but has not found out the results of the tests yet. Common symptoms of coronavirus (COVID-19) are fever, chills, cough, sore throat, shortness of breath, runny nose, loss or changes in sense of smell or taste.
+Anyone who has symptoms, no matter how mild, should get tested and then stay home.
+Until you find out the results, there is a risk that you may have coronavirus (COVID-19) and could spread the virus to other people. It is very important that you follow the recommendations in this fact sheet.
+</string>
+    <string name="q3">What happens if my test is positive?</string>
+        <string name="num">أرقام مهمة</string>
+        <string name="hotNumber">الخط الساخن للاستفسار عن فيروس كورونا</string>
+        <string name="ambulanceNumber">رقم خدمة الإسعاف</string>
+        <string name="mersal">رقم طوارئ مؤسسة مرسال</string>
+        <string name="support">لتلقي دعم لحالات العزل المنزلي ارسل كلمة "عزل" للرقم</string>
+        <string name="sySupport">خدمة الدعم النفسي من وزارة الصحة</string>
+        <string name="whatsapp">خدمة الرد الآلي عبر واتساب للاستفسارات حول فيروس كورونا</string>
+        <string name="fullname">الاسم الرباعي</string>
+        <string name="phoneNumber">رقم الهاتف</string>
+        <string name="logIn">تسجيل الدخول</string>
+    <string name="ans3">If you tested positive, you must continue to isolate. Both your doctor and a public health officer will contact you to find out more information from you and provide you with further information. After a discussion, a specialist may be involved to further assess your illness. You must remain in your home or accommodation until you are well and an assessment has been made by
+        the Department of Health and Human Services to advise it is safe to return to normal activities. </string>
 </resources>

@@ -18,7 +18,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.corona.Activities.ContactUs;
 import com.example.corona.Activities.ImportantNumbers;
-import com.example.corona.Activities.NearHospital;
 import com.example.corona.Activities.QuestionsF;
 import com.example.corona.ViewModels.CountriesViewModel;
 import com.example.corona.adapters.CountryAdaapter;
@@ -40,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+      //  background.start();
 
         recyclerView = findViewById(R.id.countries_recyclerview);
         countryAdaapter = new CountryAdaapter();
@@ -92,6 +92,10 @@ public class MainActivity extends AppCompatActivity {
         itemTouchHelper.attachToRecyclerView(recyclerView);
     }
 
+
+
+
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main_menu, menu);
@@ -100,6 +104,9 @@ public class MainActivity extends AppCompatActivity {
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
+
+               // compare(query);
+      //      countryAdaapter.getFilter().filter(query);
 //countries.getCountry();
 //countryAdaapter.notifyDataSetChanged();
                 return false;
@@ -107,6 +114,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public boolean onQueryTextChange(String newText) {
+
                 return false;
             }
         });
@@ -141,12 +149,38 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, ContactUs.class));
 
                 return true;
-            case R.id.min_hos:
-                startActivity(new Intent(MainActivity.this, NearHospital.class));
 
-                return true;
+
         }
 
         return false;
     }
+//public void compare(String str){
+//        Countries countries=new Countries();
+//        ArrayList<Countries> countries1;
+//        if (countries.getCountry().toString().toLowerCase()==str.toString())
+//     //   return countryAdaapter.setcountriesList();
+//}
+
+
+//    Thread background = new Thread() {
+//        public void run() {
+//            try {
+//                // Thread will sleep for 5 seconds
+//                sleep(5*1000);
+//
+//                // After 5 seconds redirect to another intent
+//                Intent i=new Intent(getBaseContext(),MainActivity.class);
+//                startActivity(i);
+//
+//                //Remove activity
+//                finish();
+//            } catch (Exception e) {
+//            }
+//        }
+//    };
+    // start thread
+
+
+
 }

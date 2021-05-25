@@ -4,12 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginTop="@dimen/_25sdp"
+    android:layout_marginTop="@dimen/_35sdp"
     android:layout_marginBottom="@dimen/_25sdp"
 
     app:cardCornerRadius="@dimen/_40sdp"
-    app:cardElevation="@dimen/_2sdp"
 
+    app:cardElevation="@dimen/_2sdp"
     app:cardUseCompatPadding="true">
 
 
@@ -17,7 +17,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="10dp"
-        android:background="#FFEB3B">
+        android:background="#A3D6BF">
 
         <TextView
             android:id="@+id/new_confirmed"
