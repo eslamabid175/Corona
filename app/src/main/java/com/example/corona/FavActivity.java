@@ -84,7 +84,7 @@ public class FavActivity extends AppCompatActivity {
                 viewModel.deleteCountry(swipedcountries.getCountry());
                 countryAdaapter.notifyDataSetChanged();
                 Toast.makeText(FavActivity.this,
-                        "country deleted from data base", Toast.LENGTH_SHORT).show();
+                        "country deleted from favroites", Toast.LENGTH_SHORT).show();
             }
         };
         ItemTouchHelper itemTouchHelper=new ItemTouchHelper(callback);

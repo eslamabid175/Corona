@@ -85,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
                 Countries swipedcountries = countryAdaapter.getCountryAt(swipcountryposition);
                 viewModel.insertCountry(swipedcountries);
                 countryAdaapter.notifyDataSetChanged();
-                Toast.makeText(MainActivity.this, "country added to data base", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, "Country added to Favorites", Toast.LENGTH_SHORT).show();
             }
         };
         ItemTouchHelper itemTouchHelper = new ItemTouchHelper(callback);
@@ -104,16 +104,19 @@ public class MainActivity extends AppCompatActivity {
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
+                countryAdaapter.getFilter().filter(query);
 
                // compare(query);
       //      countryAdaapter.getFilter().filter(query);
 //countries.getCountry();
-//countryAdaapter.notifyDataSetChanged();
+countryAdaapter.notifyDataSetChanged();
                 return false;
             }
 
             @Override
             public boolean onQueryTextChange(String newText) {
+                     countryAdaapter.getFilter().filter(newText);
+countryAdaapter.notifyDataSetChanged();
 
                 return false;
             }

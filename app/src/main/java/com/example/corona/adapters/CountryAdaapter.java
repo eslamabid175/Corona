@@ -15,9 +15,10 @@ import com.example.corona.model.Countries;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 public class CountryAdaapter  extends RecyclerView.Adapter<CountryAdaapter.AdapterViewHolder> implements Filterable {
-        private ArrayList<Countries> countriesList=new ArrayList<>();
+         ArrayList<Countries> countriesList=new ArrayList<>();
         ArrayList<Countries>countriesArrayListAll;
         @NonNull
         @Override
@@ -61,44 +62,6 @@ public class CountryAdaapter  extends RecyclerView.Adapter<CountryAdaapter.Adapt
             return countriesList.get(position);
         }
 
-    @Override
-    public Filter getFilter() {
-        return filter;
-    }
-    Filter filter=new Filter() {
-        @Override
-        protected FilterResults performFiltering(CharSequence constraint) {
-      ArrayList<Countries>filterdlist=new ArrayList<>();
-      if (constraint.toString().isEmpty()){
-
-
-          filterdlist.addAll(countriesArrayListAll);
-
-      }else {
-
-for (Countries countries: countriesArrayListAll){
-
-    if (countries.getCountry().toLowerCase().contains(constraint.toString().toLowerCase())){
-
-        filterdlist.add(countries);
-    }
-}
-
-      }
-FilterResults filterResults=new FilterResults();
-      filterResults.values=filterdlist;
-
-            return filterResults;
-        }
-
-        @Override
-        protected void publishResults(CharSequence constraint, FilterResults results) {
-countriesList.clear();
-countriesList.addAll((Collection<? extends Countries>) results.values);
-        notifyDataSetChanged();
-        }
-    };
-
     public class AdapterViewHolder extends RecyclerView.ViewHolder {
 
         private     TextView nc,tc,c,nd,td,d,nr,tr;
@@ -117,4 +80,45 @@ countriesList.addAll((Collection<? extends Countries>) results.values);
 
             }
         }
+
+
+    @Override
+    public Filter getFilter() {
+        return filter;
     }
+    private Filter filter=new Filter() {
+        @Override
+        protected FilterResults performFiltering(CharSequence constraint) {
+            ArrayList<Countries>filterdlist=new ArrayList<>();
+            if (constraint.toString().isEmpty()){
+
+
+                filterdlist.addAll(countriesList);
+
+            }else {
+                String filtepattern=constraint.toString().toLowerCase().trim();
+                for (Countries item: countriesList){
+
+                    if (item.getCountry().toLowerCase().contains(filtepattern)){
+
+                        filterdlist.add(item);
+                    }
+                }
+
+            }
+            FilterResults results=new FilterResults();
+            results.values=filterdlist;
+
+            return results;
+        }
+
+        @Override
+        protected void publishResults(CharSequence constraint, FilterResults results) {
+            countriesList.clear();
+            countriesList.addAll((ArrayList)results.values);
+            notifyDataSetChanged();
+        }
+    };
+
+
+}

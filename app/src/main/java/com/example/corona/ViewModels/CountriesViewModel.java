@@ -13,6 +13,7 @@ import com.example.corona.model.CountriesResponce;
 import com.example.corona.repository.Repository;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
@@ -63,7 +64,11 @@ public class CountriesViewModel extends ViewModel {
                 .subscribe(result -> CountriesList.setValue(result),
                         error -> Log.e("ViewModel", error.getMessage()));
     }
-
+//public void search (){
+//
+//        ArrayList<Countries>l=new ArrayList<>();
+//
+//}
 
     public void insertCountry(Countries countries) {
         repository.insertCountry(countries);
